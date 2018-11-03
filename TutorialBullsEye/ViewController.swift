@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var targetValue: Int = 0
     
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert(){
         
-        let message = "The value of the slider is now: \(currentValue)" + "\nThe target value is: \(targetValue)"
+        let message = "The value of the slider is now: \(currentValue)"
         
         let alert = UIAlertController(title: "Hello World!", message: message, preferredStyle: .alert)
         
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
     
     func startNewRound(){
         targetValue = Int.random(in: 1...100)
+        targetLabel.text = String(targetValue)
         currentValue = 50
         slider.value = Float(currentValue)
     }
