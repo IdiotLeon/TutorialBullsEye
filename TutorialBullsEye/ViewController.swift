@@ -51,6 +51,8 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue)
         currentValue = 50
         slider.value = Float(currentValue)
+        
+        let diff = abs(targetValue - Int(slider.value.rounded()))
     }
 }
 
